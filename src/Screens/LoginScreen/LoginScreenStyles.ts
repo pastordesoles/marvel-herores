@@ -6,12 +6,11 @@ const loginScreenStyles = StyleSheet.create({
     justifyContent: 'center',
     height: '100%',
   },
-  title: {
-    color: globalColors.accent,
-    fontSize: 56,
-    fontWeight: 'bold',
+  image: {
+    width: 200,
+    height: 200,
     alignSelf: 'center',
-    marginBottom: 60,
+    marginBottom: 30,
   },
 });
 
