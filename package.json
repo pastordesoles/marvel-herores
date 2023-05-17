@@ -1,0 +1,74 @@
+{
+  "name": "marvelheroes",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "test:dev": "jest --watchAll",
+    "test:coverage": "jest --watchAll=false --collect-coverage",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.0",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.2",
+    "@react-navigation/stack": "^6.3.4",
+    "@reduxjs/toolkit": "^1.9.5",
+    "apisauce": "^3.0.0",
+    "axios": "^1.3.6",
+    "react": "16.13.1",
+    "react-native": "0.63.5",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.0.2",
+    "react-native-screens": "3.13.1",
+    "react-redux": "^8.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@testing-library/react-native": "^11.5.4",
+    "@types/jest": "^25.2.3",
+    "@types/react-native": "^0.63.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-xo": "^0.43.1",
+    "eslint-config-xo-typescript": "^0.57.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-native": "^4.0.0",
+    "jest": ">=28.0.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "prettier": "^2.8.7",
+    "react-test-renderer": "16.13.1",
+    "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "@types/react": "^16"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "./jest.setup.ts"
+    ],
+    "testEnvironment": "jest-environment-jsdom",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*))"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
