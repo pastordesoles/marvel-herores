@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useNavigation} from '@react-navigation/native';
 import {type User} from '../../store/features/userSlice/types';
 import {
   loginUserActionCreator,
@@ -7,15 +8,17 @@ import {
 import {useAppDispatch} from '../../store/hooks';
 import loginData from './loginData.json';
 import {type UserCredentials} from './types';
+import Routes from '../../navigation/StackNavigator/routes';
+import {type NavigationProps} from '../../types/navigation.types';
 
 const useUser = () => {
   const dispatch = useAppDispatch();
+  const navigation = useNavigation<NavigationProps>();
 
   const loginUser = async (userCredentials: UserCredentials) => {
     try {
       const {username, password, email} = loginData as UserCredentials;
       if (
-        username === userCredentials.username &&
         password === userCredentials.password &&
         email === userCredentials.email
       ) {
@@ -29,6 +32,8 @@ const useUser = () => {
         await AsyncStorage.setItem('username', username);
         await AsyncStorage.setItem('email', email);
       }
+
+      navigation.navigate(Routes.home);
     } catch (error) {
       throw new Error('Username, password or email are incorrect');
     }
