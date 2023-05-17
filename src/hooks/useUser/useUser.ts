@@ -17,7 +17,7 @@ const useUser = () => {
 
   const loginUser = async (userCredentials: UserCredentials) => {
     try {
-      const {username, password, email} = loginData as UserCredentials;
+      const {username, password, email, surname} = loginData as UserCredentials;
       if (
         password === userCredentials.password &&
         email === userCredentials.email
@@ -30,6 +30,7 @@ const useUser = () => {
         dispatch(loginUserActionCreator(loggedUser));
 
         await AsyncStorage.setItem('username', username);
+        await AsyncStorage.setItem('surname', surname);
         await AsyncStorage.setItem('email', email);
       }
 
@@ -42,6 +43,7 @@ const useUser = () => {
   const logoutUser = async () => {
     dispatch(logoutUserActionCreator());
     await AsyncStorage.removeItem('username');
+    await AsyncStorage.removeItem('surname');
     await AsyncStorage.removeItem('email');
   };
 

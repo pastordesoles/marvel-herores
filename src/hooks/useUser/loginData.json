@@ -1,5 +1,6 @@
 {
   "username": "admin",
+  "surname": "admin",
   "email": "admin@localhost.com",
   "password": "admin"
 }
