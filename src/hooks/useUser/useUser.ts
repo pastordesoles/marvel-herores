@@ -6,14 +6,14 @@ import {
 } from '../../store/features/userSlice/userSlice';
 import {useAppDispatch} from '../../store/hooks';
 import loginData from './loginData.json';
-import {type userCredentials} from './types';
+import {type UserCredentials} from './types';
 
 const useUser = () => {
   const dispatch = useAppDispatch();
 
-  const loginUser = async (userCredentials: userCredentials) => {
+  const loginUser = async (userCredentials: UserCredentials) => {
     try {
-      const {username, password, email} = loginData as userCredentials;
+      const {username, password, email} = loginData as UserCredentials;
       if (
         username === userCredentials.username &&
         password === userCredentials.password &&
