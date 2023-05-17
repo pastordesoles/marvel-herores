@@ -45,7 +45,7 @@ const App = () => (
         )}
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Step 1</Text>
+            <Text style={styles.sectionTitle}>Step ONE</Text>
             <Text style={styles.sectionDescription}>
               Edit <Text style={styles.highlight}>App.tsx</Text> to change this
               screen and then come back to see your edits.
