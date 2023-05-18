@@ -1,5 +1,4 @@
-import {StyleSheet} from 'react-native';
-import {globalColors} from '../../styles/colors';
+import { StyleSheet } from 'react-native';
 
 const loginScreenStyles = StyleSheet.create({
   contentContainer: {
