@@ -1,7 +1,8 @@
 import { type ApisauceInstance, create } from 'apisauce';
 import * as React from 'react';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState, useMemo } from 'react';
 import { type MarvelData, type MarvelResponse } from './types';
+import { Alert } from 'react-native';
 import {
   type ContextStateFetched,
   type ApiRequestContextState,
@@ -15,6 +16,7 @@ import {
   marvelHash,
   marvelTs,
 } from './authParams';
+import { charactersEndpoint } from './authParams';
 
 type Props = {
   url: string;
@@ -75,6 +77,7 @@ const marvelProxy = new Proxy<MarvelResponse>(
             }
           ).apiInstance.get<T>(url);
           const { data } = response;
+
           if (response.status !== 200 || !data) {
             throw new Error('Error fetching data');
           }
@@ -124,7 +127,7 @@ function getPaginationQueryStringParams(
   return { limit: `${maxResults}`, offset: `${page * maxResults}` };
 }
 
-export function CachedRequestsProvider({
+export function CachedHeroRequestsProvider({
   children,
   url,
   maxResultsPerPage,
@@ -138,14 +141,20 @@ export function CachedRequestsProvider({
 
   const getNavigatableUrl = useCallback((): string => {
     const newUrl = new URL(url);
+
     Object.entries({
       ...getAuthQueryStringParams(),
       ...getPaginationQueryStringParams(maxResultsPerPage, page),
     }).forEach((param) => {
       newUrl.searchParams.append(param[0], param[1]);
     });
-    return newUrl.toString();
-  }, [page, state]);
+
+    const stringedUrl = newUrl
+      .toString()
+      .replace('characters/', charactersEndpoint);
+
+    return stringedUrl;
+  }, [page, url]);
 
   useEffect(() => {
     if (state.isFetching || !state.url) {
@@ -165,29 +174,37 @@ export function CachedRequestsProvider({
           },
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    marvelProxy[getNavigatableUrl()].then((value) => {
-      setState({
-        ...state,
-        isFetching: false,
-        data: {
-          ...(state.data ?? {}),
-          [url]: value,
-        },
-      } as ContextStateFetched<MarvelData>);
-    });
+    marvelProxy[getNavigatableUrl()]
+      .then((value) => {
+        const previousData = page === 0 ? [] : state.data;
+
+        setState({
+          ...state,
+          isFetching: false,
+          data: [...(previousData ?? []), ...value.data.results],
+        } as ContextStateFetched<MarvelData>);
+      })
+      .catch((error) => {
+        Alert.alert('Error loading the data');
+
+        setState({
+          ...state,
+          isFetching: false,
+        } as ContextStateFetched<MarvelData>);
+      });
   }, [page, url]);
 
+  const store = [
+    state,
+    {
+      paginate() {
+        setPage((page) => page + 1);
+      },
+    },
+  ] as [ApiRequestContextState<MarvelData>, IActions];
+
   return (
-    <ApiRequestContext.Provider
-      value={[
-        state,
-        {
-          // eslint-disable-next-line no-warning-comments
-          /* TODO implementar la acción */
-        },
-      ]}
-    >
+    <ApiRequestContext.Provider value={store}>
       {children}
     </ApiRequestContext.Provider>
   );
