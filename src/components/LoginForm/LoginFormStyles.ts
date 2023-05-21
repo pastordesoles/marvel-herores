@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
 
 const loginFormStyles = StyleSheet.create({
-  inputContainer: { marginBottom: 14 },
+  inputContainer: { marginBottom: 18 },
   input: {
     letterSpacing: 1,
     borderBottomWidth: 1,
@@ -11,14 +11,14 @@ const loginFormStyles = StyleSheet.create({
     borderRightWidth: 0,
     borderColor: globalColors.grey,
     borderRadius: 4,
-    padding: 14,
+    padding: 18,
     fontSize: 18,
     marginBottom: 10,
     backgroundColor: globalColors.light,
   },
   button: {
     backgroundColor: globalColors.accent,
-    padding: 12,
+    padding: 18,
     alignItems: 'center',
     borderRadius: 4,
   },
@@ -29,8 +29,8 @@ const loginFormStyles = StyleSheet.create({
     letterSpacing: 1,
   },
   buttonDisabled: {
-    backgroundColor: globalColors.accentLight,
-    padding: 12,
+    backgroundColor: globalColors.black,
+    padding: 18,
     alignItems: 'center',
     borderRadius: 6,
   },
@@ -46,7 +46,7 @@ const loginFormStyles = StyleSheet.create({
     borderRadius: 4,
     padding: 35,
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: globalColors.black,
     shadowOffset: {
       width: 0,
       height: 2,

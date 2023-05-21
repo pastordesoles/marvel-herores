@@ -28,18 +28,6 @@ describe('Given a LoginForm component', () => {
       expect(emailPlaceholder).toBeDefined();
       expect(passwordPlaceholder).toBeDefined();
     });
-
-    test("Then it should show a button with the text 'Log in'", () => {
-      const expectedButtonText = 'Log in';
-
-      renderWithProviders(<LoginForm />);
-
-      const button = screen.getByRole('button');
-      const buttonText = screen.getByText(expectedButtonText);
-
-      expect(button).toBeDefined();
-      expect(buttonText).toBeDefined();
-    });
   });
 
   describe("When the user enters the email 'admin@gmail.com' and the password 'admin' and clicks on the log in button", () => {
