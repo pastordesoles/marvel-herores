@@ -5,7 +5,7 @@ import LoginScreen from './LoginScreen';
 
 describe('Given a LoginScreen component', () => {
   describe('When its rendered', () => {
-    test("Then it should show a log in form with a 'Log in' button", () => {
+    test("Then it should show  a 'Log in' button", () => {
       const buttonText = 'Log in';
 
       renderWithProviders(<LoginScreen />);

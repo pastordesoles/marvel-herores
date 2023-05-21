@@ -11,12 +11,12 @@ import {
   type IActions,
 } from './RequestContext';
 import {
+  comicsEndpoint,
   marvelApikey,
   marvelBaseUrl,
   marvelHash,
   marvelTs,
 } from './authParams';
-import { charactersEndpoint } from './authParams';
 
 type Props = {
   url: string;
@@ -91,7 +91,6 @@ const marvelProxy = new Proxy<MarvelResponse>(
           ).results[url] = data;
 
           resolve(data);
-          return;
         } catch (e) {
           reject(e);
         }
@@ -127,7 +126,7 @@ function getPaginationQueryStringParams(
   return { limit: `${maxResults}`, offset: `${page * maxResults}` };
 }
 
-export function CachedHeroRequestsProvider({
+export function CachedComicsRequestsProvider({
   children,
   url,
   maxResultsPerPage,
@@ -149,9 +148,7 @@ export function CachedHeroRequestsProvider({
       newUrl.searchParams.append(param[0], param[1]);
     });
 
-    const stringedUrl = newUrl
-      .toString()
-      .replace('characters/', charactersEndpoint);
+    const stringedUrl = newUrl.toString().replace('comics/', comicsEndpoint);
 
     return stringedUrl;
   }, [page, url]);
@@ -210,7 +207,7 @@ export function CachedHeroRequestsProvider({
   );
 }
 
-export const useCachedHeroRequests = (): [
+export const useCachedComicsRequests = (): [
   ApiRequestContextState<MarvelData>,
   IActions,
 ] => useContext(ApiRequestContext);

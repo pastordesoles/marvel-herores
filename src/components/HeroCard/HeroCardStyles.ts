@@ -4,9 +4,10 @@ import { globalColors } from '../../styles/colors';
 const heroCardStyles = StyleSheet.create({
   container: {
     borderRadius: 4,
+    borderBottomRightRadius: 45,
     backgroundColor: globalColors.black,
   },
-  imageContainer: { width: '100%', height: 330 },
+  imageContainer: { width: '100%', height: 335 },
   image: {
     width: '100%',
     height: '100%',
@@ -14,9 +15,11 @@ const heroCardStyles = StyleSheet.create({
     borderTopRightRadius: 4,
   },
   infoContainer: {
-    padding: 12,
+    borderTopWidth: 8,
+    borderTopColor: globalColors.accent,
+    padding: 18,
     paddingBottom: 20,
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
   name: {
@@ -28,6 +31,7 @@ const heroCardStyles = StyleSheet.create({
   },
   secondaryText: {
     fontSize: 18,
+    marginBottom: 18,
     textAlign: 'center',
     color: globalColors.main,
   },

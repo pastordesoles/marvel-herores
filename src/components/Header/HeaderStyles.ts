@@ -6,19 +6,30 @@ const headerStyles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: globalColors.main,
+    backgroundColor: globalColors.black,
   },
   title: {
     fontSize: 40,
     fontWeight: 'bold',
     letterSpacing: 1,
-    color: globalColors.accent,
+    color: globalColors.main,
   },
   logoutButton: {
     position: 'absolute',
     left: 20,
     top: '40%',
-    backgroundColor: globalColors.black,
+    backgroundColor: globalColors.main,
+    paddingHorizontal: 10,
+    height: 30,
+    borderRadius: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  back: {
+    position: 'absolute',
+    right: 20,
+    top: '40%',
+    backgroundColor: globalColors.main,
     paddingHorizontal: 10,
     height: 30,
     borderRadius: 4,
@@ -27,7 +38,11 @@ const headerStyles = StyleSheet.create({
   },
   logoutText: {
     fontWeight: 'bold',
-    color: globalColors.main,
+    color: globalColors.black,
+  },
+  image: {
+    width: 100,
+    height: 45,
   },
 });
 

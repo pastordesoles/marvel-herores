@@ -37,11 +37,11 @@ const LoginForm = (): JSX.Element => {
   };
 
   const onSubmitHandler = async () => {
+    setIsLoading(true);
+
     const isToLoginUser: UserCredentials = {
       ...userCredentials,
     };
-
-    setIsLoading(true);
 
     try {
       await loginUser(isToLoginUser);
@@ -96,7 +96,7 @@ const LoginForm = (): JSX.Element => {
               : loginFormStyles.button
           }
           activeOpacity={0.4}
-          accessibilityLabel="press to log in"
+          accessibilityLabel="Tap to log in"
           accessibilityRole="button"
           disabled={isButtonDisabled}
           onPress={onSubmitHandler}

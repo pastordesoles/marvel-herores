@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import globalStyles from '../../styles/globalStyles';
 import { type MarvelHeroData } from '../../proxy/types';
 import HeroesList from '../../components/HeroesList/HeroesList';
-import { useCachedRequests } from '../../proxy/CachedHeroRequestProvider';
+import { useCachedHeroRequests } from '../../proxy/CachedHeroRequestProvider';
 
 const HomeScreen = (): JSX.Element => {
-  const [state, actions] = useCachedRequests();
+  const [state, actions] = useCachedHeroRequests();
 
   return (
     <View style={globalStyles.container}>
