@@ -8,6 +8,7 @@ import { type RootStackParamList } from '../../types/navigation.types';
 import Routes from './routes';
 import HeroRequestProvider from '../HeroRequestProvider';
 import Header from '../../components/Header/Header';
+import ComicsRequestProvider from '../ComicsRequestProvider';
 
 const StackNavigator = (): JSX.Element => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -28,6 +29,11 @@ const StackNavigator = (): JSX.Element => {
         <Stack.Screen
           component={HeroRequestProvider}
           name={Routes.home}
+          options={{ headerShown: true, gestureEnabled: false }}
+        />
+        <Stack.Screen
+          component={ComicsRequestProvider}
+          name={Routes.detail}
           options={{ headerShown: true, gestureEnabled: false }}
         />
       </Stack.Navigator>
