@@ -1,6 +1,6 @@
 import { type ApisauceInstance, create } from 'apisauce';
 import * as React from 'react';
-import { useCallback, useContext, useEffect, useState, useMemo } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { type MarvelData, type MarvelResponse } from './types';
 import { Alert } from 'react-native';
 import {
@@ -90,8 +90,8 @@ const marvelProxy = new Proxy<MarvelResponse>(
             }
           ).results[url] = data;
 
-          // eslint-disable-next-line no-promise-executor-return
-          return data;
+          resolve(data);
+          return;
         } catch (e) {
           reject(e);
         }
@@ -210,7 +210,7 @@ export function CachedHeroRequestsProvider({
   );
 }
 
-export const useCachedRequests = (): [
+export const useCachedHeroRequests = (): [
   ApiRequestContextState<MarvelData>,
   IActions,
 ] => useContext(ApiRequestContext);
