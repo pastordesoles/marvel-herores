@@ -5,5 +5,4 @@ export const globalColors = {
   main: '#fff',
   black: '#000',
   light: '#f2f2f2',
-  error: '#fa024d',
 };
