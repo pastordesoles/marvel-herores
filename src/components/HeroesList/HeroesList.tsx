@@ -10,6 +10,7 @@ import HeroCard from '../HeroCard/HeroCard';
 import heroesListStyles from './HeroesListStyles';
 import { globalColors } from '../../styles/colors';
 import { type MarvelHero, type MarvelHeroData } from '../../proxy/types';
+import globalStyles from '../../styles/globalStyles';
 
 interface HeroesListProps {
   onEndReachedAction: () => void;
@@ -30,11 +31,25 @@ const HeroesList = ({
     heroesListRef.current!.scrollToOffset({ animated: true, offset: 0 });
   };
 
-  if (!heroesList?.length) {
+  if (!heroesList?.length && !isFetching) {
     return (
       <Text style={heroesListStyles.errorText}>
         There was an error loading the heroes
       </Text>
+    );
+  }
+
+  if (isFetching && !heroesList?.length) {
+    return (
+      <View style={globalStyles.container}>
+        <View style={heroesListStyles.contentContainer}>
+          <ActivityIndicator
+            size={100}
+            color={globalColors.accent}
+            style={heroesListStyles.loader}
+          />
+        </View>
+      </View>
     );
   }
 
@@ -57,16 +72,15 @@ const HeroesList = ({
         ItemSeparatorComponent={renderSeparator}
         contentContainerStyle={heroesListStyles.list}
         ref={heroesListRef}
-        bounces={false}
         scrollEnabled={!isFetching}
       />
-      {isFetching && heroesList.length ? (
+      {isFetching && heroesList?.length && (
         <ActivityIndicator
           size={100}
           color={globalColors.accent}
           style={heroesListStyles.loader}
         />
-      ) : null}
+      )}
     </View>
   );
 };
