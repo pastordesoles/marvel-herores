@@ -11,8 +11,8 @@ jest.mock('@react-navigation/native', () => ({
 
 describe('Given a Header component', () => {
   describe('When rendered', () => {
-    test("Then it should show a title with the text 'MARVEL'", () => {
-      const titleText = 'MARVEL';
+    test("Then it should show an images with the text 'HEROES'", () => {
+      const titleText = 'HEROES';
 
       render(
         <Provider store={store}>
@@ -20,7 +20,7 @@ describe('Given a Header component', () => {
         </Provider>,
       );
 
-      const title = screen.getByText(titleText);
+      const title = screen.getByTestId(titleText);
 
       expect(title).toBeDefined();
     });
