@@ -76,7 +76,7 @@ const HeroesList = ({
       />
       {isFetching && heroesList?.length && (
         <ActivityIndicator
-          size={100}
+          size="large"
           color={globalColors.accent}
           style={heroesListStyles.loader}
         />

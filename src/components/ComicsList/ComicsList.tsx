@@ -38,8 +38,8 @@ const ComicList = (): JSX.Element => {
       />
       {state.isFetching && state.data?.length && (
         <ActivityIndicator
-          size="large"
-          color={globalColors.accent}
+          size={250}
+          color={globalColors.black}
           style={comicListStyles.loader}
         />
       )}
