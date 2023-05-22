@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { type User } from '../../store/features/userSlice/types';
 import {
@@ -7,9 +6,10 @@ import {
 } from '../../store/features/userSlice/userSlice';
 import { useAppDispatch } from '../../store/hooks';
 import loginData from './loginData.json';
-import { type UserCredentials } from './types';
+import { type UserDataPersistance, type UserCredentials } from './types';
 import Routes from '../../navigation/StackNavigator/routes';
 import { type NavigationProps } from '../../types/navigation.types';
+import userStorage from './utils/userStorage';
 
 const useUser = () => {
   const dispatch = useAppDispatch();
@@ -29,17 +29,14 @@ const useUser = () => {
         };
 
         dispatch(loginUserActionCreator(loggedUser));
+        const userDataToPersist: UserDataPersistance = {
+          username,
+          surname,
+          email,
+        };
 
-        AsyncStorage.setItem('username', username).catch((error) => {
-          throw new Error('Error storing username');
-        });
-
-        AsyncStorage.setItem('surname', surname).catch((error) => {
-          throw new Error('Error storing surname');
-        });
-
-        AsyncStorage.setItem('email', email).catch((error) => {
-          throw new Error('Error storing email');
+        userStorage.storeItem(userDataToPersist).catch((error) => {
+          throw new Error('Error storing user data');
         });
 
         resolve(loggedUser);
@@ -53,9 +50,13 @@ const useUser = () => {
 
   const logoutUser = async () => {
     dispatch(logoutUserActionCreator());
-    await AsyncStorage.removeItem('username');
-    await AsyncStorage.removeItem('surname');
-    await AsyncStorage.removeItem('email');
+
+    const dataToRemove = ['username', 'surname', 'email'];
+
+    userStorage.removeItem(dataToRemove).catch((error) => {
+      throw new Error('Error removing user data');
+    });
+
     navigation.navigate(Routes.login);
   };
 
