@@ -8,7 +8,7 @@ import { useAppDispatch } from '../../store/hooks';
 import loginData from './loginData.json';
 import { type UserDataPersistance, type UserCredentials } from './types';
 import Routes from '../../navigation/StackNavigator/routes';
-import { type NavigationProps } from '../../types/navigation.types';
+import { type NavigationProps } from '../../navigation/types/navigation.types';
 import userStorage from './utils/userStorage';
 
 const useUser = () => {

@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaView, StatusBar } from 'react-native';
 import globalStyles from '../../styles/globalStyles';
 import LoginScreen from '../../Screens/LoginScreen/LoginScreen';
-import { type RootStackParamList } from '../../types/navigation.types';
+import { type RootStackParamList } from '../types/navigation.types';
 import Routes from './routes';
 import Header from '../../components/Header/Header';
 import HeroRequestProvider from '../ProviderWrappers/HeroRequestProvider';
