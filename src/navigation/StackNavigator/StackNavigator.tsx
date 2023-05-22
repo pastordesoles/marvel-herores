@@ -33,7 +33,11 @@ const StackNavigator = (): JSX.Element => {
         <Stack.Screen
           component={ComicsRequestProvider}
           name={Routes.detail}
-          options={{ headerShown: true, gestureEnabled: false }}
+          options={{
+            headerShown: true,
+            gestureEnabled: true,
+            gestureDirection: 'horizontal',
+          }}
         />
       </Stack.Navigator>
       <StatusBar barStyle={'dark-content'} />

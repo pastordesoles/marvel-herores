@@ -9,12 +9,12 @@ const Header = (): JSX.Element => {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const logoutConfirmationText = 'Are you sure you want to log out?';
+  const logoutConfirmationText = 'Are you sure?';
 
   const logoutAlert = () => {
     Alert.alert('Log out', logoutConfirmationText, [
-      { text: 'Cancel' },
-      { text: 'Log out', style: 'destructive', onPress: logoutUser },
+      { text: 'Let me stay' },
+      { text: 'Log me out', style: 'destructive', onPress: logoutUser },
     ]);
   };
 
