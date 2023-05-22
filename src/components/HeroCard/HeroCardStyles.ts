@@ -27,7 +27,7 @@ const heroCardStyles = StyleSheet.create({
     fontSize: typos.lg,
     fontWeight: 'bold',
     marginBottom: 8,
-    textAlign: 'center',
+    textAlign: 'left',
     color: globalColors.main,
   },
   secondaryText: {
