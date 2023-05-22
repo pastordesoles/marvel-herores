@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { type NavigationProps } from '../../types/navigation.types';
+import { type NavigationProps } from '../../navigation/types/navigation.types';
 import { useAppDispatch } from '../../store/hooks';
 import { type HeroStructure } from '../../store/features/heroSlice/types';
 import Routes from '../../navigation/StackNavigator/routes';

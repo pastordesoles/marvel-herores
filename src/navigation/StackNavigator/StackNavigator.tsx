@@ -3,12 +3,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaView, StatusBar } from 'react-native';
 import globalStyles from '../../styles/globalStyles';
 import LoginScreen from '../../Screens/LoginScreen/LoginScreen';
-import HomeScreen from '../../Screens/HomeScreen/HomeScreen';
-import { type RootStackParamList } from '../../types/navigation.types';
+import { type RootStackParamList } from '../types/navigation.types';
 import Routes from './routes';
-import HeroRequestProvider from '../HeroRequestProvider';
 import Header from '../../components/Header/Header';
-import ComicsRequestProvider from '../ComicsRequestProvider';
+import HeroRequestProvider from '../ProviderWrappers/HeroRequestProvider';
+import ComicsRequestProvider from '../ProviderWrappers/ComicsRequestProvider';
 
 const StackNavigator = (): JSX.Element => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -34,7 +33,11 @@ const StackNavigator = (): JSX.Element => {
         <Stack.Screen
           component={ComicsRequestProvider}
           name={Routes.detail}
-          options={{ headerShown: true, gestureEnabled: false }}
+          options={{
+            headerShown: true,
+            gestureEnabled: true,
+            gestureDirection: 'horizontal',
+          }}
         />
       </Stack.Navigator>
       <StatusBar barStyle={'dark-content'} />
