@@ -14,7 +14,7 @@ const HeroCard = ({
   const { loadCurrentHero } = useLoadCurrentHero();
 
   return (
-    <View style={heroCardStyles.container}>
+    <View style={heroCardStyles.container} testID="heroData">
       <TouchableOpacity
         activeOpacity={0.9}
         onPress={() => {
