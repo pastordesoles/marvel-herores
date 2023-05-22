@@ -4,7 +4,9 @@ Welcome to **Marvel Heroes**! An app that showcases information about Marvel sup
 
 ## Screenshots
 
-![Screenshots](assets/AppCovers.jpg)
+<div align="center">
+  <img src="assets/AppCovers.jpg" alt="Screenshots" />
+</div>
 
 ## Features
 
