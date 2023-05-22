@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
+import { typos } from '../../styles/typos';
 
 const headerStyles = StyleSheet.create({
   container: {
@@ -9,7 +10,7 @@ const headerStyles = StyleSheet.create({
     backgroundColor: globalColors.black,
   },
   title: {
-    fontSize: 40,
+    fontSize: typos.xlg,
     fontWeight: 'bold',
     letterSpacing: 1,
     color: globalColors.main,
