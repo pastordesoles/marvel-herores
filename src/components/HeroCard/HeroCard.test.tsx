@@ -5,7 +5,7 @@ import HeroCard from './HeroCard';
 import { aaronStackHero } from '../../utils/mockHeroes';
 
 describe('Given a HeroCard component', () => {
-  describe('When it receives the hero Aaron Stack', () => {
+  describe('When its rendered and it receives the hero Aaron Stack', () => {
     test('Then it should show the name on the screen', () => {
       const heroName = aaronStackHero.name;
 

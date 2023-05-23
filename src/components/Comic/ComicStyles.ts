@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 import { globalColors } from '../../styles/colors';
 
 const comicStyles = StyleSheet.create({
@@ -11,19 +11,18 @@ const comicStyles = StyleSheet.create({
     borderTopRightRadius: 4,
   },
   comicTitle: {
-    fontSize: typos.ls,
-    textAlign: 'center',
-    fontStyle: 'italic',
+    fontSize: fontSizes.ls,
+    textAlign: 'left',
     color: globalColors.main,
   },
-  infoContainer: {
+  titleContainer: {
     borderTopWidth: 8,
     borderTopColor: globalColors.accent,
     backgroundColor: globalColors.black,
     padding: 18,
     paddingBottom: 20,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     height: 120,
     borderBottomRightRadius: 45,
   },

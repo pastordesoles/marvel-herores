@@ -10,9 +10,7 @@ import {
   View,
 } from 'react-native';
 import loginFormStyles from './LoginFormStyles';
-
 import useUser from '../../hooks/useUser/useUser';
-
 import { type UserCredentials } from '../../hooks/useUser/types';
 import { globalColors } from '../../styles/colors';
 
@@ -22,7 +20,7 @@ const LoginForm = (): JSX.Element => {
   const initialUserCredentials: UserCredentials = {
     email: '',
     password: '',
-    username: '',
+    userName: '',
     surname: '',
   };
 
@@ -39,12 +37,12 @@ const LoginForm = (): JSX.Element => {
   const onSubmitHandler = async () => {
     setIsLoading(true);
 
-    const isToLoginUser: UserCredentials = {
+    const userToLogin: UserCredentials = {
       ...userCredentials,
     };
 
     try {
-      await loginUser(isToLoginUser);
+      await loginUser(userToLogin);
 
       setUserCredentials({ ...initialUserCredentials });
       setIsLoading(false);

@@ -6,7 +6,7 @@ import { mockHeroes } from '../../utils/mockHeroes';
 
 describe('Given a HeroesList component', () => {
   describe('When its rendered with a list of heroes', () => {
-    test('Then it should show the received on the screen', () => {
+    test('Then it should show the received heroes on screen', () => {
       const heroCardTestId = 'heroData';
       const numberOfCards = mockHeroes.length;
 

@@ -35,10 +35,10 @@ const HeroCard = ({
             accessibilityLabel={name}
           />
         </View>
-        <View style={heroCardStyles.infoContainer}>
+        <View style={heroCardStyles.informationContainer}>
           <Text style={heroCardStyles.name}>{name}</Text>
           <Text
-            style={heroCardStyles.secondaryText}
+            style={heroCardStyles.comicAppearances}
           >{`${comics.available} comic appearances`}</Text>
         </View>
       </TouchableOpacity>

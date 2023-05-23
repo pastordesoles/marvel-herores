@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 
 const loginFormStyles = StyleSheet.create({
   inputContainer: { marginBottom: 18 },
@@ -13,7 +13,7 @@ const loginFormStyles = StyleSheet.create({
     borderColor: globalColors.grey,
     borderRadius: 4,
     padding: 18,
-    fontSize: typos.ls,
+    fontSize: fontSizes.ls,
     marginBottom: 10,
     backgroundColor: globalColors.light,
   },
@@ -26,7 +26,7 @@ const loginFormStyles = StyleSheet.create({
   buttonText: {
     color: globalColors.main,
     fontWeight: 'bold',
-    fontSize: typos.md,
+    fontSize: fontSizes.md,
     letterSpacing: 1,
   },
   buttonDisabled: {

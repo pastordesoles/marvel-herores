@@ -1,6 +1,5 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { type HeroDetailState } from './types';
-import { marvelBaseUrl } from '../../../proxy/authParams';
 
 export const initialHeroState: HeroDetailState = {
   currentHeroDetail: {

@@ -10,8 +10,8 @@ jest.mock('@react-navigation/native', () => ({
 }));
 
 describe('Given a Header component', () => {
-  describe('When rendered', () => {
-    test("Then it should show an images with the text 'HEROES'", () => {
+  describe('When its rendered', () => {
+    test("Then it should show an image with the test id 'HEROES'", () => {
       const titleText = 'HEROES';
 
       render(

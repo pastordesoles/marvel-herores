@@ -27,7 +27,7 @@ const HeroesList = ({
 }: HeroesListProps): JSX.Element => {
   const heroesListRef = useRef<FlatList<MarvelHero>>(null);
 
-  const scrollToTop = () => {
+  const resetScroll = () => {
     heroesListRef.current!.scrollToOffset({ animated: true, offset: 0 });
   };
 
@@ -58,7 +58,7 @@ const HeroesList = ({
       <TouchableOpacity
         style={heroesListStyles.scrollButton}
         activeOpacity={0.4}
-        onPress={scrollToTop}
+        onPress={resetScroll}
       >
         <View style={heroesListStyles.arrow} />
       </TouchableOpacity>
@@ -66,7 +66,7 @@ const HeroesList = ({
         data={heroesList}
         renderItem={({ item }) => <HeroCard hero={item} />}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => `${item.id}`}
         onEndReached={onEndReachedAction}
         onEndReachedThreshold={0.5}
         ItemSeparatorComponent={renderSeparator}

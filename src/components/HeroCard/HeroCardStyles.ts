@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 
 const heroCardStyles = StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ const heroCardStyles = StyleSheet.create({
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
   },
-  infoContainer: {
+  informationContainer: {
     borderTopWidth: 8,
     borderTopColor: globalColors.accent,
     padding: 18,
@@ -24,14 +24,14 @@ const heroCardStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
-    fontSize: typos.lg,
+    fontSize: fontSizes.lg,
     fontWeight: 'bold',
     marginBottom: 8,
     textAlign: 'left',
     color: globalColors.main,
   },
-  secondaryText: {
-    fontSize: typos.ls,
+  comicAppearances: {
+    fontSize: fontSizes.ls,
     marginBottom: 18,
     textAlign: 'center',
     color: globalColors.main,

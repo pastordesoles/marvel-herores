@@ -24,19 +24,22 @@ const HeroDetailScreen = (): JSX.Element => {
         />
       </View>
       <Text style={heroDetailScreenStyles.heroName}>{name}</Text>
+
       {description ? (
         <Text style={heroDetailScreenStyles.description}>{description}</Text>
       ) : (
-        <Text style={heroDetailScreenStyles.noDescription}>
+        <Text style={heroDetailScreenStyles.blankDescription}>
           Our agents are still gathering information about this hero.
         </Text>
       )}
+
       <View style={heroDetailScreenStyles.comicsSection}>
         <View style={heroDetailScreenStyles.comicsTitleContainer}>
           <Text style={heroDetailScreenStyles.comicsTitle}>COMICS</Text>
         </View>
+
         {comicAppearances === 0 ? (
-          <Text style={heroDetailScreenStyles.noDescription}>
+          <Text style={heroDetailScreenStyles.blankDescription}>
             No comic appearances
           </Text>
         ) : (
