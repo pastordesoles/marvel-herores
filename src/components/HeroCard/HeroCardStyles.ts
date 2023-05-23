@@ -15,7 +15,7 @@ const heroCardStyles = StyleSheet.create({
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
   },
-  infoContainer: {
+  informationContainer: {
     borderTopWidth: 8,
     borderTopColor: globalColors.accent,
     padding: 18,
@@ -30,7 +30,7 @@ const heroCardStyles = StyleSheet.create({
     textAlign: 'left',
     color: globalColors.main,
   },
-  secondaryText: {
+  comicAppearances: {
     fontSize: fontSizes.ls,
     marginBottom: 18,
     textAlign: 'center',

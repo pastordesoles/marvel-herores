@@ -1,6 +1,6 @@
 import React from 'react';
-import Comic from './Comic';
 import { render, screen } from '@testing-library/react-native';
+import Comic from './Comic';
 import { mockComicOne } from '../../utils/mockComics';
 
 describe('Given a Comic component', () => {

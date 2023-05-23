@@ -28,7 +28,7 @@ const ComicList = (): JSX.Element => {
         data={state.data as MarvelComicData}
         ItemSeparatorComponent={renderSeparator}
         contentContainerStyle={comicListStyles.comicsList}
-        keyExtractor={(item, index) => `${item.id}-${index}`}
+        keyExtractor={(item) => `${item.id}`}
         onEndReachedThreshold={0.5}
         horizontal={true}
         onEndReached={() => {

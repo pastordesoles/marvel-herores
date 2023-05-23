@@ -16,7 +16,7 @@ const heroDetailScreenStyles = StyleSheet.create({
     letterSpacing: 0.75,
     marginBottom: 20,
   },
-  noDescription: {
+  blankDescription: {
     fontSize: fontSizes.xs,
     fontStyle: 'italic',
     letterSpacing: 0.75,

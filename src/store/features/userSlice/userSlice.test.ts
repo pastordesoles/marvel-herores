@@ -13,7 +13,7 @@ describe('Given a userReducer', () => {
   };
 
   describe('When it receives the initial state and a login user action with a new user', () => {
-    test('Then it should return the state with the users credentials and isLogged true', () => {
+    test('Then it should return the new state with the received user credentials and isLogged true', () => {
       const currentState: UserState = {
         ...initialState,
       };
@@ -36,8 +36,8 @@ describe('Given a userReducer', () => {
     });
   });
 
-  describe('When it receives a state with a logged in user and a logout action', () => {
-    test('Then it should return a state with no user credentials and isLogged false', () => {
+  describe('When it receives a state with a logged user and a logout action', () => {
+    test('Then it should return a new state with no user credentials and isLogged false', () => {
       const currentState: UserState = {
         email: 'admin@gmail.com',
         userName: 'Admin',

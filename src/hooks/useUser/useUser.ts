@@ -19,6 +19,7 @@ const useUser = () => {
     await new Promise((resolve, reject) => {
       const { userName, password, email, surname } =
         loginData as UserCredentials;
+
       if (
         password === userCredentials.password &&
         email === userCredentials.email

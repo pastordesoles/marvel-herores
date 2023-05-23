@@ -16,7 +16,7 @@ const Comic = ({ comic }: ComicProps): JSX.Element => (
       style={comicStyles.comicImage}
       accessibilityLabel={`${comic.title} comic cover image`}
     />
-    <View style={comicStyles.infoContainer}>
+    <View style={comicStyles.titleContainer}>
       <Text style={comicStyles.comicTitle}>{comic.title}</Text>
     </View>
   </View>

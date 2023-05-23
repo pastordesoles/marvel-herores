@@ -12,18 +12,17 @@ const comicStyles = StyleSheet.create({
   },
   comicTitle: {
     fontSize: fontSizes.ls,
-    textAlign: 'center',
-    fontStyle: 'italic',
+    textAlign: 'left',
     color: globalColors.main,
   },
-  infoContainer: {
+  titleContainer: {
     borderTopWidth: 8,
     borderTopColor: globalColors.accent,
     backgroundColor: globalColors.black,
     padding: 18,
     paddingBottom: 20,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     height: 120,
     borderBottomRightRadius: 45,
   },

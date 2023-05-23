@@ -8,7 +8,7 @@ const heroesListStyles = StyleSheet.create({
   errorText: {
     fontSize: fontSizes.sm,
     alignSelf: 'center',
-    letterSpacing: 0.75,
+    letterSpacing: 0.7,
   },
   contentContainer: {
     justifyContent: 'center',
