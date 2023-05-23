@@ -24,15 +24,19 @@ Welcome to **Marvel Heroes**! An app that showcases information about Marvel sup
 - **Jest & React Native Testing Library**
 - **Husky**
 - **ESLint & Prettier**
-- Developing target: Android
+- **Developing target:** Android
 
 ## Setup
+
+The Project was developed using Node version `16.20.0`.
 
 Install the dependencies. Run the following command in the project root:
 
 ```
 npm install
 ```
+
+Once the installation has finished, make sure that the `tsconfig.json` matches the one present in the repository.
 
 Start the Metro Bundler running the following command in the project root:
 
