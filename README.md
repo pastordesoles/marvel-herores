@@ -26,6 +26,38 @@ Welcome to **Marvel Heroes**! An app that showcases information about Marvel sup
 - **ESLint & Prettier**
 - **Developing target:** Android
 
+## Project Structure
+
+```
+src
+├── components
+│   ├── Comic
+│   ├── ComicsList
+│   ├── Header
+│   ├── HeroCard
+│   ├── HeroesList
+│   └── LoginForm
+├── hooks
+│   ├── useLoadCurrentHero
+│   └── useUser
+│       └── utils
+├── navigation
+│   ├── ProviderWrappers
+│   ├── StackNavigator
+│   └── types
+├── proxy
+├── Screens
+│   ├── HeroDetailScreen
+│   ├── HomeScreen
+│   └── LoginScreen
+├── store
+│   └── features
+│       ├── heroSlice
+│       └── userSlice
+├── styles
+└── utils
+```
+
 ## Setup
 
 The Project was developed using Node version `16.20.0`.
