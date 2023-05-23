@@ -38,7 +38,6 @@ export type MarvelHero = {
   id: number;
   name: string;
   description: string;
-  modified: string;
   thumbnail: {
     path: string;
     extension: string;
@@ -47,135 +46,14 @@ export type MarvelHero = {
   comics: {
     available: number;
     collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-    }>;
-    returned: number;
   };
-  series: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-    }>;
-    returned: number;
-  };
-  stories: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-      type: string;
-    }>;
-    returned: number;
-  };
-  events: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-    }>;
-    returned: number;
-  };
-  urls: Array<{
-    type: string;
-    url: string;
-  }>;
 };
 
 export type MarvelComic = {
-  id: number;
-  digitalId: number;
   title: string;
-  issueNumber: number;
-  variantDescription: string;
-  description: string;
-  modified: string;
-  isbn: string;
-  upc: string;
-  diamondCode: string;
-  ean: string;
-  issn: string;
-  format: string;
-  pageCount: number;
-  textObjects: Array<{
-    type: string;
-    language: string;
-    text: string;
-  }>;
-  resourceURI: string;
-  urls: Array<{
-    type: string;
-    url: string;
-  }>;
-  series: {
-    resourceURI: string;
-    name: string;
-  };
-  variants: Array<{
-    resourceURI: string;
-    name: string;
-  }>;
-  collections: any[];
-  collectedIssues: any[];
-  dates: Array<{
-    type: string;
-    date: string;
-  }>;
-  prices: Array<{
-    type: string;
-    price: number;
-  }>;
   thumbnail: {
     path: string;
     extension: string;
-  };
-  images: Array<{
-    path: string;
-    extension: string;
-  }>;
-  creators: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-      role: string;
-    }>;
-    returned: number;
-  };
-  characters: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-      role?: string;
-    }>;
-    returned: number;
-  };
-  stories: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-      type: string;
-    }>;
-    returned: number;
-  };
-  events: {
-    available: number;
-    collectionURI: string;
-    items: Array<{
-      resourceURI: string;
-      name: string;
-    }>;
-    returned: number;
   };
 };
 
