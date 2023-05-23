@@ -36,7 +36,7 @@ describe('Given a LoginForm component', () => {
         email: 'admin@gmail.com',
         password: 'admin',
         surname: '',
-        username: '',
+        userName: '',
       };
 
       const emailLabelText = 'Enter your email address';

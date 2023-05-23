@@ -1,4 +1,4 @@
-export const typos = {
+export const fontSizes = {
   xlg: 40,
   lg: 36,
   md: 24,

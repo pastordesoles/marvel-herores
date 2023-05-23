@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 import { globalColors } from '../../styles/colors';
 
 const comicStyles = StyleSheet.create({
@@ -11,7 +11,7 @@ const comicStyles = StyleSheet.create({
     borderTopRightRadius: 4,
   },
   comicTitle: {
-    fontSize: typos.ls,
+    fontSize: fontSizes.ls,
     textAlign: 'center',
     fontStyle: 'italic',
     color: globalColors.main,

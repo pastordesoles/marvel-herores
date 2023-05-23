@@ -1,6 +1,6 @@
 import { type User } from '../../store/features/userSlice/types';
 export interface UserCredentials {
-  username: string;
+  userName: string;
   surname: string;
   email: string;
   password: string;

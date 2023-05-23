@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 
 const comicListStyles = StyleSheet.create({
   comicsList: { paddingBottom: 20 },
   gap: { width: 25 },
   loader: { position: 'absolute', top: 100 },
-  error: { fontSize: typos.xs },
+  error: { fontSize: fontSizes.xs },
 });
 
 export default comicListStyles;

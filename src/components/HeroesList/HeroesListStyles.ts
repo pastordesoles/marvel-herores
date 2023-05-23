@@ -1,11 +1,15 @@
 import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 
 const heroesListStyles = StyleSheet.create({
   gap: { height: 40 },
   list: { paddingTop: 20, paddingBottom: 20 },
-  errorText: { fontSize: typos.sm, alignSelf: 'center', letterSpacing: 0.75 },
+  errorText: {
+    fontSize: fontSizes.sm,
+    alignSelf: 'center',
+    letterSpacing: 0.75,
+  },
   contentContainer: {
     justifyContent: 'center',
     height: '100%',

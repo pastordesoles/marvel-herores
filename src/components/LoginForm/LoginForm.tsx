@@ -22,7 +22,7 @@ const LoginForm = (): JSX.Element => {
   const initialUserCredentials: UserCredentials = {
     email: '',
     password: '',
-    username: '',
+    userName: '',
     surname: '',
   };
 

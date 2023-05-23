@@ -1,4 +1,4 @@
-import {type UserState, type User} from './types';
+import { type UserState, type User } from './types';
 import {
   loginUserActionCreator,
   logoutUserActionCreator,
@@ -9,7 +9,7 @@ describe('Given a userReducer', () => {
   const initialState: UserState = {
     email: '',
     isLogged: false,
-    username: '',
+    userName: '',
   };
 
   describe('When it receives the initial state and a login user action with a new user', () => {
@@ -20,12 +20,12 @@ describe('Given a userReducer', () => {
 
       const user: User = {
         email: 'admin@gmail.com',
-        username: 'Admin',
+        userName: 'Admin',
       };
 
       const expectedNewState: UserState = {
         email: user.email,
-        username: user.username,
+        userName: user.userName,
         isLogged: true,
       };
 
@@ -40,7 +40,7 @@ describe('Given a userReducer', () => {
     test('Then it should return a state with no user credentials and isLogged false', () => {
       const currentState: UserState = {
         email: 'admin@gmail.com',
-        username: 'Admin',
+        userName: 'Admin',
         isLogged: true,
       };
 

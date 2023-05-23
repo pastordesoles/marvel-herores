@@ -17,7 +17,7 @@ const useUser = () => {
 
   const loginUser = async (userCredentials: UserCredentials) => {
     await new Promise((resolve, reject) => {
-      const { username, password, email, surname } =
+      const { userName, password, email, surname } =
         loginData as UserCredentials;
       if (
         password === userCredentials.password &&
@@ -25,12 +25,12 @@ const useUser = () => {
       ) {
         const loggedUser: User = {
           email,
-          username,
+          userName,
         };
 
         dispatch(loginUserActionCreator(loggedUser));
         const userDataToPersist: UserDataPersistance = {
-          username,
+          userName,
           surname,
           email,
         };
@@ -51,7 +51,7 @@ const useUser = () => {
   const logoutUser = async () => {
     dispatch(logoutUserActionCreator());
 
-    const dataToRemove = ['username', 'surname', 'email'];
+    const dataToRemove = ['userName', 'surname', 'email'];
 
     userStorage.removeItem(dataToRemove).catch((error) => {
       throw new Error('Error removing user data');

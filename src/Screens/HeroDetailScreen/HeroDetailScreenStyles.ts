@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { globalColors } from '../../styles/colors';
-import { typos } from '../../styles/typos';
+import { fontSizes } from '../../styles/fontSizes';
 
 const heroDetailScreenStyles = StyleSheet.create({
   imageContainer: {
@@ -10,17 +10,21 @@ const heroDetailScreenStyles = StyleSheet.create({
     marginBottom: 10,
   },
   image: { width: '100%', height: '100%', borderRadius: 4 },
-  heroName: { fontWeight: 'bold', fontSize: typos.xlg, marginBottom: 10 },
-  description: { fontSize: typos.ls, letterSpacing: 0.75, marginBottom: 20 },
+  heroName: { fontWeight: 'bold', fontSize: fontSizes.xlg, marginBottom: 10 },
+  description: {
+    fontSize: fontSizes.ls,
+    letterSpacing: 0.75,
+    marginBottom: 20,
+  },
   noDescription: {
-    fontSize: typos.xs,
+    fontSize: fontSizes.xs,
     fontStyle: 'italic',
     letterSpacing: 0.75,
     marginBottom: 20,
     alignSelf: 'flex-start',
   },
   comicsTitle: {
-    fontSize: typos.md,
+    fontSize: fontSizes.md,
     fontWeight: 'bold',
     marginBottom: 2,
   },
