@@ -50,6 +50,7 @@ export type MarvelHero = {
 };
 
 export type MarvelComic = {
+  id: number;
   title: string;
   thumbnail: {
     path: string;
